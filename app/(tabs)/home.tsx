@@ -1,6 +1,7 @@
 import { View, Text, ScrollView, Image, TextInput } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
+import Categories from "../../components/Categories";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -27,25 +28,42 @@ const Home = () => {
 
         {/* greetings and punchline */}
         <View className="mx-4 space-y-2 mb-2">
-          <Text style={{fontSize: hp(1.7)}} className="text-neutral-600">Hello, Ranjit!</Text>
+          <Text style={{ fontSize: hp(1.7) }} className="text-neutral-600">
+            Hello, Ranjit!
+          </Text>
           <View>
-            <Text style={{fontSize: hp(3.8)}} className="font-semibold text-neutral-600">
-                Make your own Food,
+            <Text
+              style={{ fontSize: hp(3.8) }}
+              className="font-semibold text-neutral-600"
+            >
+              Make your own Food,
             </Text>
           </View>
-          <Text style={{fontSize: hp(3.8)}} className="font-semibold text-neutral-600">
-                stay at <Text className="text-amber-400">home</Text>
-           </Text>
+          <Text
+            style={{ fontSize: hp(3.8) }}
+            className="font-semibold text-neutral-600"
+          >
+            stay at <Text className="text-amber-400">home</Text>
+          </Text>
         </View>
 
         {/* search bar */}
-        <View>
-          <TextInput placeholder="Search any recipe" />
+        <View className="mx-4 flex-row items-center rounded-full bg-black/5 p-[6px]">
+          <TextInput
+            placeholder="Search any recipe"
+            placeholderTextColor={"gray"}
+            style={{ fontSize: hp(1.7) }}
+            className="flex-1 text-base mb-1 pl-3 tracking-wider"
+          />
           <View className="bg-white rounded-full p-3">
             <MagnifyingGlassIcon size={hp(2.5)} strokeWidth={3} color="gray" />
           </View>
         </View>
 
+        {/* category */}
+        <View>
+          <Categories />
+        </View>
       </ScrollView>
     </View>
   );
